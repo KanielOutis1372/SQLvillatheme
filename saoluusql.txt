@@ -1,0 +1,113 @@
+CREATE DATABASE DB_HUY;
+
+
+-- PRODUCTS
+USE DB_HUY;
+CREATE TABLE PRODUCTS (
+	ID		INT AUTO_INCREMENT,
+	SKU		VARCHAR(255) NOT NULL,
+    CONSTRAINT PK_PRODUCTS PRIMARY KEY(ID)
+);
+
+INSERT INTO PRODUCTS (SKU) 
+VALUES 
+	('SKU001'),
+    ('SKU002'),
+    ('SKU003'),
+    ('SKU004'),
+    ('SKU005');
+
+
+-- GALLAREYS
+USE DB_HUY;
+CREATE TABLE GALLAREYS (
+	ID				INT,
+	GALLAREY		VARCHAR(255),
+    CONSTRAINT PK_GALLAREYS PRIMARY KEY(ID, GALLAREY)
+);
+
+INSERT INTO GALLAREYS (ID, GALLAREY) 
+VALUES 
+	(1, 'example.com/image1.jpg'),
+    (1, 'example.com/image2.jpg'),
+    (1, 'example.com/image3.jpg'),
+    (2, 'example.com/image4.jpg'),
+    (2, 'example.com/image5.jpg'),
+    (3, 'example.com/image6.jpg'),
+    (3, 'example.com/image7.jpg'),
+    (3, 'example.com/image8.jpg'),
+    (4, 'example.com/image9.jpg'),
+    (5, 'example.com/image10.jpg');
+    
+-- CATEGORYS
+USE DB_HUY;
+CREATE TABLE CATEGORYS (
+	ID				INT,
+	CATEGORY		VARCHAR(255),
+    CONSTRAINT PK_GALLAREYS PRIMARY KEY(ID, CATEGORY)
+);
+
+INSERT INTO CATEGORYS (ID, CATEGORY) 
+VALUES 
+	(1, 'Electronics'),
+    (1, 'Home'),
+    (2, 'Clothing'),
+    (2, 'Sports'),
+    (2, 'Beauty'),
+    (3, 'Beauty'),
+    (4, 'Home'),
+    (5, 'Sports');
+
+-- TAGS
+USE DB_HUY;
+CREATE TABLE TAGS (
+	ID				INT,
+	TAG		VARCHAR(255),
+    CONSTRAINT PK_TAGS PRIMARY KEY(ID, TAG)
+);
+
+INSERT INTO TAGS (ID, TAG) 
+VALUES 
+	(1, 'New'),
+    (1, 'Sale'),
+    (1, 'Trend'),
+    (2, 'New'),
+    (2, 'Trend'),
+    (3, 'Featured'),
+    (3, 'Sale'),
+    (4, 'Trend'),
+    (4, 'Sale'),
+    (5, 'Featured');
+
+
+-- PRODUCTS_DETAIL
+USE DB_HUY;
+CREATE TABLE PRODUCTSDETAIL (
+	SKU				VARCHAR(255),
+	TITLE			VARCHAR(255) NOT NULL,
+    PRICE			FLOAT,
+    SALEPRICE		FLOAT,
+    FEATUREDIMAGE	VARCHAR(255),
+    DESCRIPT		VARCHAR(255),
+    CREADTEDDATE	DATETIME,
+    MODIFIEDDATE	DATETIME,
+    CONSTRAINT PRODUCTSDETAIL PRIMARY KEY(SKU)
+);
+
+INSERT INTO PRODUCTSDETAIL 
+	(SKU, 
+	TITLE, 
+	PRICE, 
+	SALEPRICE, 
+	FEATUREDIMAGE, 
+	DESCRIPT, 
+	CREADTEDDATE,
+	MODIFIEDDATE) 
+VALUES 
+	('SKU001', 'Product 1', 22.99, 25.99, 'example.com/image1.jpg', 'This is the description of Product 1', '2023-05-30 10:15', '2023-05-30 11:15'),
+	('SKU002', 'Product 2', 49.99, NULL, 'example.com/image4.jpg', 'This is the description of Product 2', '2023-05-30 9:45', '2023-05-30 11:00'),
+    ('SKU003', 'Product 3', 14.99, 10.99, 'example.com/image1.jpg', 'This is the description of Product 3', '2023-05-30 12:00', '2023-05-30 14:20'),
+    ('SKU004', 'Product 4', 99.99, 89.99, 'example.com/image1.jpg', 'This is the description of Product 4', '2023-05-30 15:30', '2023-05-30 16:45'),
+    ('SKU005', 'Product 5', 19.99, NULL, 'example.com/image1.jpg', 'This is the description of Product 5', '2023-05-30 18:30', '2023-05-30 19:15');
+
+SELECT * FROM PRODUCTSDETAIL;

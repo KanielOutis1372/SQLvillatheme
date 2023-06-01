@@ -1,0 +1,15 @@
+Thiết kế cơ sở dữ liệu để lưu thông tin sản phẩm dựa trên https://villatheme.com/extensions/
+
+Mỗi sản phẩm gồm: ID, SKU, Title, Price, Sale price, Featured image, Gallery, Category, Tag, Description, Created date, Modified date
+
+Mỗi sản phẩm có thể có nhiều category/tag và mỗi category/tag có thể gán cho nhiều sản phẩm
+
+Viết các query:
+
+Thêm, sửa, xóa sản phẩm
+
+Lấy danh sách sản phẩm theo category/tag nào đó(có thể phân trang)
+
+Tìm kiếm sản phẩm theo tên
+
+Sắp xếp danh sách sản phẩm theo title/price/created date
